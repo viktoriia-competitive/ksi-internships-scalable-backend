@@ -645,6 +645,10 @@ runline-control-plane-redesign/
 ### Layer boundaries
 
 ```mermaid
+---
+config:
+  htmlLabels: false
+---
 flowchart LR
     HTTP[HTTP / FastAPI]
     UseCases[Use Cases]
