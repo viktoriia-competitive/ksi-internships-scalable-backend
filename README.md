@@ -42,7 +42,10 @@
 
 ## Why Runline
 
-A naive online judge can execute user code directly inside an HTTP request. That works for a prototype, but it couples API latency, execution failures, persistence, and process isolation into a single failure domain.
+This project was developed during the **KSI Internship** under the guidance and mentorship of **Radosław Myśliwiec**.
+
+The internship provided an opportunity to design and implement a scalable online judge architecture, with a particular focus on reliability, asynchronous processing, system design, and production-oriented backend engineering.
+
 
 Runline takes a different approach: **the API records intent, PostgreSQL owns durable facts, Redis delivers work, and workers execute submissions asynchronously**.
 
