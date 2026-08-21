@@ -1,0 +1,133 @@
+name: runline
+
+x-control-plane: &control-plane
+  image: runline-control-plane-dev
+  build:
+    context: .
+    dockerfile: control_plane/Dockerfile.dev
+  working_dir: /app
+  volumes:
+    - .:/app
+    - challenge_revisions:/app/challenge_bank/.runline
+  environment:
+    DATABASE_URL: postgresql+asyncpg://runline:runline@postgres:5432/runline
+    REDIS_URL: redis://redis:6379/0
+    CORS_ORIGINS: http://localhost:3000,http://127.0.0.1:3000
+    AUTO_CREATE_SCHEMA: "true"
+    EXECUTION_USE_CGROUP: "false"
+    PYTHONUNBUFFERED: "1"
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: runline
+      POSTGRES_USER: runline
+      POSTGRES_PASSWORD: runline
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U runline -d runline"]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--appendonly", "yes"]
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+
+  seed:
+    <<: *control-plane
+    command: ["python", "-m", "control_plane.scripts.seed_challenge_catalog"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: "no"
+
+  api:
+    <<: *control-plane
+    command:
+      [
+        "uvicorn",
+        "control_plane.runtime.main:app",
+        "--reload",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8000",
+      ]
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      seed:
+        condition: service_completed_successfully
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/ready', timeout=2).read()",
+        ]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+      start_period: 3s
+    restart: unless-stopped
+
+  worker:
+    <<: *control-plane
+    command: ["python", "-m", "control_plane.runtime.worker.main"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      seed:
+        condition: service_completed_successfully
+    restart: unless-stopped
+
+  console:
+    image: runline-control-console-dev
+    build:
+      context: ./web_console
+      dockerfile: Dockerfile.dev
+    working_dir: /workspace
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./web_console:/workspace
+      - console_node_modules:/workspace/node_modules
+    environment:
+      API_URL: http://api:8000
+      NEXT_PUBLIC_API_URL: http://localhost:8000
+      WATCHPACK_POLLING: "true"
+      CHOKIDAR_USEPOLLING: "true"
+      NODE_ENV: development
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  redis_data:
+  challenge_revisions:
+  console_node_modules:
