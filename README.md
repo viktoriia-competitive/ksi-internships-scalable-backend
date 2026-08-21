@@ -77,6 +77,10 @@ Runline takes a different approach: **the API records intent, PostgreSQL owns du
 ## System Architecture
 
 ```mermaid
+---
+config:
+  htmlLabels: false
+---
 flowchart TB
     subgraph Client[Client Layer]
         Browser[Browser]
@@ -149,6 +153,10 @@ flowchart TB
 ### Deployment topology
 
 ```mermaid
+---
+config:
+  htmlLabels: false
+---
 flowchart LR
     User[Developer / User]
 
@@ -181,6 +189,10 @@ The browser uses `NEXT_PUBLIC_API_URL=http://localhost:8000`, while Next.js serv
 The submission path is deliberately split between **durable acceptance** and **asynchronous execution**.
 
 ```mermaid
+---
+config:
+  htmlLabels: false
+---
 sequenceDiagram
     autonumber
     actor U as User
@@ -242,6 +254,10 @@ The API does **not** need Redis to be available at the exact instant a submissio
 Runline keeps an ordered lifecycle event stream and derives the current attempt projection from those facts.
 
 ```mermaid
+---
+config:
+  htmlLabels: false
+---
 stateDiagram-v2
     [*] --> QUEUED: attempt.opened / execution.requested
     QUEUED --> RUNNING: execution.claimed
@@ -280,6 +296,10 @@ Runline follows a simple ownership rule:
 > **PostgreSQL owns facts. Redis owns delivery.**
 
 ```mermaid
+---
+config:
+  htmlLabels: false
+---
 flowchart LR
     A[HTTP submission] --> T{PostgreSQL transaction}
     T -->|commit| Attempt[Attempt + lifecycle]
@@ -332,6 +352,10 @@ Runline uses multiple keys for different forms of duplicate protection:
 The judge engine is separated from queueing and persistence. It receives a source artifact plus a challenge bundle and returns a structured suite result.
 
 ```mermaid
+---
+config:
+  htmlLabels: false
+---
 flowchart LR
     Source[Source Artifact]
     Bundle[Challenge Bundle]
