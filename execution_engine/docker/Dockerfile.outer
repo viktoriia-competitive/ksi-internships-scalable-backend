@@ -1,0 +1,24 @@
+FROM ubuntu:24.04
+
+ARG JUDGE_UID=10001
+ENV DEBIAN_FRONTEND=noninteractive \
+    PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONPATH=/srv/runline
+
+RUN apt-get update \
+    && apt-get install --yes --no-install-recommends \
+       bash bubblewrap ca-certificates coreutils g++ gcc golang-go \
+       openjdk-17-jdk-headless procps python3 rustc cargo time util-linux \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN useradd --uid "${JUDGE_UID}" --create-home --shell /usr/sbin/nologin runner \
+    && install -d -o runner -g runner /srv/runline
+
+WORKDIR /srv/runline
+COPY --chown=runner:runner . /srv/runline/execution_engine
+USER runner
+
+ENTRYPOINT ["python3", "-m", "execution_engine.tools.cli"]
+CMD ["check-toolchains"]
