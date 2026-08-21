@@ -61,7 +61,7 @@ export function ChallengeWorkspace({ challenge }: { challenge: ChallengeView }) 
           </div>
         ) : null}
 
-        <div className="min-h-0 flex-1 overflow-auto">
+        <div className="min-h-0 flex-1 overflow-hidden">
           {workspace.tab === "submit" ? (
             <AttemptComposer challenge={challenge} onQueued={workspace.queueAttempt} />
           ) : (
