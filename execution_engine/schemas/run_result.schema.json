@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:runline:evaluation:case-result:v3",
+  "title": "Runline case result",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": [
+        "OK",
+        "ACCEPTED",
+        "WRONG_ANSWER",
+        "TIME_LIMIT",
+        "MEMORY_LIMIT",
+        "RUNTIME_ERROR",
+        "COMPILATION_ERROR",
+        "INTERNAL_ERROR"
+      ]
+    },
+    "test_id": {
+      "type": "string"
+    },
+    "exit_code": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "cpu_ms": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "CPU milliseconds consumed by this case."
+    },
+    "wall_ms": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Elapsed wall-clock milliseconds for this case."
+    },
+    "mem_kb": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Peak memory observed for this case, in KiB."
+    },
+    "message": {
+      "type": "string"
+    },
+    "killed_by_wall": {
+      "type": "boolean"
+    },
+    "killed_by_oom": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "status",
+    "exit_code",
+    "cpu_ms",
+    "wall_ms",
+    "mem_kb"
+  ]
+}

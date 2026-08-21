@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:runline:evaluation:suite-result:v3",
+  "title": "Runline suite result",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": [
+        "ACCEPTED",
+        "WRONG_ANSWER",
+        "TIME_LIMIT",
+        "MEMORY_LIMIT",
+        "RUNTIME_ERROR",
+        "COMPILATION_ERROR",
+        "INTERNAL_ERROR"
+      ]
+    },
+    "tests_passed": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of accepted cases that executed."
+    },
+    "tests_total": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of complete input/output case pairs in the package."
+    },
+    "max_cpu_ms": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Largest per-case CPU observation."
+    },
+    "max_mem_kb": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Largest per-case memory observation."
+    },
+    "compile_message": {
+      "type": "string"
+    },
+    "first_failure_message": {
+      "type": "string"
+    },
+    "per_test": {
+      "type": "array",
+      "items": {
+        "$ref": "run_result.schema.json"
+      }
+    }
+  },
+  "required": [
+    "status",
+    "tests_passed",
+    "tests_total",
+    "max_cpu_ms",
+    "max_mem_kb"
+  ]
+}

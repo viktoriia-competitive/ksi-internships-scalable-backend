@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:runline:evaluation:suite-request:v3",
+  "title": "Runline suite request",
+  "type": "object",
+  "additionalProperties": false,
+  "$defs": {
+    "limits": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "time_limit_ms",
+        "memory_limit_mb"
+      ],
+      "properties": {
+        "time_limit_ms": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "memory_limit_mb": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "wall_factor": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "default": 2.0
+        }
+      }
+    }
+  },
+  "properties": {
+    "run_key": {
+      "type": "string",
+      "minLength": 1
+    },
+    "runtime": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tests_dir": {
+      "type": "string",
+      "minLength": 1
+    },
+    "work_dir": {
+      "type": "string",
+      "minLength": 1
+    },
+    "limits": {
+      "$ref": "#/$defs/limits"
+    },
+    "checker": {
+      "type": "string",
+      "enum": [
+        "token",
+        "custom"
+      ],
+      "default": "token"
+    },
+    "checker_path": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "stop_on_first_failure": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "run_key",
+    "runtime",
+    "source_path",
+    "tests_dir",
+    "work_dir",
+    "limits"
+  ]
+}
