@@ -1,0 +1,89 @@
+{
+  "key": "rl-dependency-waves",
+  "shortCode": "DW09",
+  "name": "Deployment Waves",
+  "origin": {
+    "platform": "runline-labs",
+    "license": "CC0-1.0",
+    "category": "portfolio-demo"
+  },
+  "level": "medium",
+  "score": 1500,
+  "labels": [
+    "graphs",
+    "topological-sort",
+    "dag"
+  ],
+  "mode": "stdio",
+  "runtimes": [
+    "Python",
+    "C++",
+    "Java",
+    "Rust",
+    "Go"
+  ],
+  "budget": {
+    "cpuMillis": 2000,
+    "memoryMiB": 128,
+    "derived": false
+  },
+  "input": {
+    "mode": "stdio",
+    "inputFile": null,
+    "outputFile": null
+  },
+  "prompt": {
+    "overview": "Services may deploy only after all prerequisites have deployed. Assign every service the earliest possible deployment wave, starting from wave 1. Cyclic dependency graphs cannot be scheduled.",
+    "inputContract": "The first line contains n and m. Each of the next m lines contains edge a b meaning a must deploy before b.",
+    "outputContract": "Print CYCLE if the graph is cyclic. Otherwise print n earliest wave numbers in service order.",
+    "interactionContract": null,
+    "notes": null
+  },
+  "examples": [
+    {
+      "stdin": "5 4\n1 3\n2 3\n3 4\n3 5",
+      "stdout": "1 1 2 3 3",
+      "explanation": null
+    },
+    {
+      "stdin": "3 3\n1 2\n2 3\n3 1",
+      "stdout": "CYCLE",
+      "explanation": null
+    }
+  ],
+  "evaluation": {
+    "checker": {
+      "kind": "token",
+      "script": null,
+      "options": {}
+    },
+    "interactor": null
+  },
+  "references": [
+    {
+      "runtime": "Python",
+      "entry": "model/sol.py"
+    }
+  ],
+  "suite": {
+    "directory": "tests",
+    "cases": 20,
+    "visible": 2,
+    "complete": true
+  },
+  "artifact": {
+    "kind": "source",
+    "extensions": [
+      ".py",
+      ".cpp",
+      ".cc",
+      ".c",
+      ".java",
+      ".rs",
+      ".go"
+    ],
+    "entrypoint": null
+  },
+  "acceptedCount": 0,
+  "enabled": true
+}

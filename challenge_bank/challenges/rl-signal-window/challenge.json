@@ -1,0 +1,89 @@
+{
+  "key": "rl-signal-window",
+  "shortCode": "SW01",
+  "name": "Peak Signal Window",
+  "origin": {
+    "platform": "runline-labs",
+    "license": "CC0-1.0",
+    "category": "portfolio-demo"
+  },
+  "level": "easy",
+  "score": 900,
+  "labels": [
+    "sliding-window",
+    "arrays",
+    "monitoring"
+  ],
+  "mode": "stdio",
+  "runtimes": [
+    "Python",
+    "C++",
+    "Java",
+    "Rust",
+    "Go"
+  ],
+  "budget": {
+    "cpuMillis": 2000,
+    "memoryMiB": 128,
+    "derived": false
+  },
+  "input": {
+    "mode": "stdio",
+    "inputFile": null,
+    "outputFile": null
+  },
+  "prompt": {
+    "overview": "A monitoring agent recorded a signed signal once per second. Find the largest total signal observed in any contiguous window of exactly k samples.",
+    "inputContract": "The first line contains n and k. The second line contains n signed integers.",
+    "outputContract": "Print one integer: the maximum sum over all contiguous windows of length k.",
+    "interactionContract": null,
+    "notes": null
+  },
+  "examples": [
+    {
+      "stdin": "5 3\n1 2 3 4 5",
+      "stdout": "12",
+      "explanation": null
+    },
+    {
+      "stdin": "6 2\n-5 -2 -7 -1 -3 -4",
+      "stdout": "-4",
+      "explanation": null
+    }
+  ],
+  "evaluation": {
+    "checker": {
+      "kind": "token",
+      "script": null,
+      "options": {}
+    },
+    "interactor": null
+  },
+  "references": [
+    {
+      "runtime": "Python",
+      "entry": "model/sol.py"
+    }
+  ],
+  "suite": {
+    "directory": "tests",
+    "cases": 20,
+    "visible": 2,
+    "complete": true
+  },
+  "artifact": {
+    "kind": "source",
+    "extensions": [
+      ".py",
+      ".cpp",
+      ".cc",
+      ".c",
+      ".java",
+      ".rs",
+      ".go"
+    ],
+    "entrypoint": null
+  },
+  "acceptedCount": 0,
+  "enabled": true
+}

@@ -1,0 +1,84 @@
+{
+  "key": "rl-quorum-window",
+  "shortCode": "QW10",
+  "name": "Smallest Quorum Window",
+  "origin": {
+    "platform": "runline-labs",
+    "license": "CC0-1.0",
+    "category": "portfolio-demo"
+  },
+  "level": "hard",
+  "score": 1700,
+  "labels": [
+    "two-pointers",
+    "events",
+    "sliding-window"
+  ],
+  "mode": "stdio",
+  "runtimes": [
+    "Python",
+    "C++",
+    "Java",
+    "Rust",
+    "Go"
+  ],
+  "budget": {
+    "cpuMillis": 2000,
+    "memoryMiB": 128,
+    "derived": false
+  },
+  "input": {
+    "mode": "stdio",
+    "inputFile": null,
+    "outputFile": null
+  },
+  "prompt": {
+    "overview": "An incident is considered observable only when every service has emitted at least q events inside the same time interval. Find the narrowest interval represented by a contiguous slice of the event log.",
+    "inputContract": "The first line contains n, s and q. The next n lines contain timestamp and serviceId. Timestamps are non-decreasing and service ids are from 1 to s.",
+    "outputContract": "Print the minimum timestamp width of a qualifying window, or -1 if no such window exists.",
+    "interactionContract": null,
+    "notes": null
+  },
+  "examples": [
+    {
+      "stdin": "8 3 2\n1 1\n2 2\n3 3\n4 1\n6 2\n7 3\n9 1\n12 2",
+      "stdout": "6",
+      "explanation": null
+    }
+  ],
+  "evaluation": {
+    "checker": {
+      "kind": "token",
+      "script": null,
+      "options": {}
+    },
+    "interactor": null
+  },
+  "references": [
+    {
+      "runtime": "Python",
+      "entry": "model/sol.py"
+    }
+  ],
+  "suite": {
+    "directory": "tests",
+    "cases": 20,
+    "visible": 1,
+    "complete": true
+  },
+  "artifact": {
+    "kind": "source",
+    "extensions": [
+      ".py",
+      ".cpp",
+      ".cc",
+      ".c",
+      ".java",
+      ".rs",
+      ".go"
+    ],
+    "entrypoint": null
+  },
+  "acceptedCount": 0,
+  "enabled": true
+}

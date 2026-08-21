@@ -1,0 +1,84 @@
+{
+  "key": "rl-shard-capacity",
+  "shortCode": "SC08",
+  "name": "Contiguous Shard Capacity",
+  "origin": {
+    "platform": "runline-labs",
+    "license": "CC0-1.0",
+    "category": "portfolio-demo"
+  },
+  "level": "medium",
+  "score": 1500,
+  "labels": [
+    "binary-search",
+    "greedy",
+    "partitioning"
+  ],
+  "mode": "stdio",
+  "runtimes": [
+    "Python",
+    "C++",
+    "Java",
+    "Rust",
+    "Go"
+  ],
+  "budget": {
+    "cpuMillis": 2000,
+    "memoryMiB": 128,
+    "derived": false
+  },
+  "input": {
+    "mode": "stdio",
+    "inputFile": null,
+    "outputFile": null
+  },
+  "prompt": {
+    "overview": "Split a fixed-order sequence of jobs across at most m workers. Each worker receives one contiguous block. Minimize the largest total weight assigned to any worker.",
+    "inputContract": "The first line contains n and m. The second line contains n positive job weights.",
+    "outputContract": "Print the minimum possible maximum worker load.",
+    "interactionContract": null,
+    "notes": null
+  },
+  "examples": [
+    {
+      "stdin": "5 2\n7 2 5 10 8",
+      "stdout": "18",
+      "explanation": null
+    }
+  ],
+  "evaluation": {
+    "checker": {
+      "kind": "token",
+      "script": null,
+      "options": {}
+    },
+    "interactor": null
+  },
+  "references": [
+    {
+      "runtime": "Python",
+      "entry": "model/sol.py"
+    }
+  ],
+  "suite": {
+    "directory": "tests",
+    "cases": 20,
+    "visible": 1,
+    "complete": true
+  },
+  "artifact": {
+    "kind": "source",
+    "extensions": [
+      ".py",
+      ".cpp",
+      ".cc",
+      ".c",
+      ".java",
+      ".rs",
+      ".go"
+    ],
+    "entrypoint": null
+  },
+  "acceptedCount": 0,
+  "enabled": true
+}

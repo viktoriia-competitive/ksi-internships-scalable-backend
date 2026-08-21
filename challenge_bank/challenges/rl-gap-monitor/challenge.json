@@ -1,0 +1,84 @@
+{
+  "key": "rl-gap-monitor",
+  "shortCode": "GM02",
+  "name": "Longest Quiet Gap",
+  "origin": {
+    "platform": "runline-labs",
+    "license": "CC0-1.0",
+    "category": "portfolio-demo"
+  },
+  "level": "easy",
+  "score": 900,
+  "labels": [
+    "simulation",
+    "timestamps",
+    "monitoring"
+  ],
+  "mode": "stdio",
+  "runtimes": [
+    "Python",
+    "C++",
+    "Java",
+    "Rust",
+    "Go"
+  ],
+  "budget": {
+    "cpuMillis": 2000,
+    "memoryMiB": 128,
+    "derived": false
+  },
+  "input": {
+    "mode": "stdio",
+    "inputFile": null,
+    "outputFile": null
+  },
+  "prompt": {
+    "overview": "Given non-decreasing event timestamps, locate the largest gap between consecutive events. When several gaps are equal, keep the earliest one.",
+    "inputContract": "The first line contains n >= 2. The second line contains n non-decreasing integer timestamps.",
+    "outputContract": "Print the gap length and the 1-based index of the event that ends that gap.",
+    "interactionContract": null,
+    "notes": null
+  },
+  "examples": [
+    {
+      "stdin": "5\n0 4 4 9 21",
+      "stdout": "12 5",
+      "explanation": null
+    }
+  ],
+  "evaluation": {
+    "checker": {
+      "kind": "token",
+      "script": null,
+      "options": {}
+    },
+    "interactor": null
+  },
+  "references": [
+    {
+      "runtime": "Python",
+      "entry": "model/sol.py"
+    }
+  ],
+  "suite": {
+    "directory": "tests",
+    "cases": 20,
+    "visible": 1,
+    "complete": true
+  },
+  "artifact": {
+    "kind": "source",
+    "extensions": [
+      ".py",
+      ".cpp",
+      ".cc",
+      ".c",
+      ".java",
+      ".rs",
+      ".go"
+    ],
+    "entrypoint": null
+  },
+  "acceptedCount": 0,
+  "enabled": true
+}

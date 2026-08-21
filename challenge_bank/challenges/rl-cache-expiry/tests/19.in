@@ -1,0 +1,64 @@
+63
+3 GET user
+4 GET token
+4 GET c
+5 GET token
+6 SET a 6
+6 GET token
+8 SET a 8
+11 SET user 8
+14 GET token
+16 SET a 3
+17 SET user 5
+20 SET a 10
+21 SET a 7
+23 GET token
+24 SET user 11
+27 SET user 9
+28 GET token
+28 GET b
+31 GET c
+34 GET c
+35 GET token
+38 SET token 6
+41 GET b
+41 GET user
+44 SET c 6
+47 GET user
+50 SET token 2
+53 SET user 11
+54 SET c 8
+56 GET user
+57 SET c 1
+59 GET token
+59 SET a 1
+60 GET b
+62 SET token 12
+63 GET c
+66 SET c 8
+69 SET c 2
+69 GET a
+70 GET token
+71 GET b
+72 GET token
+72 GET b
+73 SET user 1
+74 GET a
+77 GET c
+79 SET c 9
+80 SET a 2
+83 SET b 9
+86 SET b 5
+89 SET token 8
+89 GET user
+89 GET token
+90 GET token
+90 SET b 6
+91 GET user
+91 GET user
+91 GET user
+91 SET token 10
+92 GET token
+92 GET b
+94 SET a 9
+95 GET c

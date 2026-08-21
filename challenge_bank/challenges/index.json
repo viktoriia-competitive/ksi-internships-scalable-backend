@@ -1,0 +1,365 @@
+[
+  {
+    "key": "rl-batch-dedup",
+    "shortCode": "BD03",
+    "name": "Stable Batch Deduplication",
+    "level": "easy",
+    "score": 1000,
+    "labels": [
+      "hash-set",
+      "strings",
+      "streaming"
+    ],
+    "mode": "stdio",
+    "runtimes": [
+      "Python",
+      "C++",
+      "Java",
+      "Rust",
+      "Go"
+    ],
+    "budget": {
+      "cpuMillis": 2000,
+      "memoryMiB": 128,
+      "derived": false
+    },
+    "acceptedCount": 0,
+    "customChecker": false,
+    "interactive": false,
+    "origin": {
+      "platform": "runline-labs",
+      "license": "CC0-1.0",
+      "category": "portfolio-demo"
+    }
+  },
+  {
+    "key": "rl-cache-expiry",
+    "shortCode": "CE07",
+    "name": "TTL Cache Timeline",
+    "level": "medium",
+    "score": 1300,
+    "labels": [
+      "simulation",
+      "hash-map",
+      "ttl"
+    ],
+    "mode": "stdio",
+    "runtimes": [
+      "Python",
+      "C++",
+      "Java",
+      "Rust",
+      "Go"
+    ],
+    "budget": {
+      "cpuMillis": 2000,
+      "memoryMiB": 128,
+      "derived": false
+    },
+    "acceptedCount": 0,
+    "customChecker": false,
+    "interactive": false,
+    "origin": {
+      "platform": "runline-labs",
+      "license": "CC0-1.0",
+      "category": "portfolio-demo"
+    }
+  },
+  {
+    "key": "rl-dependency-waves",
+    "shortCode": "DW09",
+    "name": "Deployment Waves",
+    "level": "medium",
+    "score": 1500,
+    "labels": [
+      "graphs",
+      "topological-sort",
+      "dag"
+    ],
+    "mode": "stdio",
+    "runtimes": [
+      "Python",
+      "C++",
+      "Java",
+      "Rust",
+      "Go"
+    ],
+    "budget": {
+      "cpuMillis": 2000,
+      "memoryMiB": 128,
+      "derived": false
+    },
+    "acceptedCount": 0,
+    "customChecker": false,
+    "interactive": false,
+    "origin": {
+      "platform": "runline-labs",
+      "license": "CC0-1.0",
+      "category": "portfolio-demo"
+    }
+  },
+  {
+    "key": "rl-event-merge",
+    "shortCode": "EM06",
+    "name": "Merge Event Streams",
+    "level": "medium",
+    "score": 1200,
+    "labels": [
+      "sorting",
+      "streams",
+      "merge"
+    ],
+    "mode": "stdio",
+    "runtimes": [
+      "Python",
+      "C++",
+      "Java",
+      "Rust",
+      "Go"
+    ],
+    "budget": {
+      "cpuMillis": 2000,
+      "memoryMiB": 128,
+      "derived": false
+    },
+    "acceptedCount": 0,
+    "customChecker": false,
+    "interactive": false,
+    "origin": {
+      "platform": "runline-labs",
+      "license": "CC0-1.0",
+      "category": "portfolio-demo"
+    }
+  },
+  {
+    "key": "rl-gap-monitor",
+    "shortCode": "GM02",
+    "name": "Longest Quiet Gap",
+    "level": "easy",
+    "score": 900,
+    "labels": [
+      "simulation",
+      "timestamps",
+      "monitoring"
+    ],
+    "mode": "stdio",
+    "runtimes": [
+      "Python",
+      "C++",
+      "Java",
+      "Rust",
+      "Go"
+    ],
+    "budget": {
+      "cpuMillis": 2000,
+      "memoryMiB": 128,
+      "derived": false
+    },
+    "acceptedCount": 0,
+    "customChecker": false,
+    "interactive": false,
+    "origin": {
+      "platform": "runline-labs",
+      "license": "CC0-1.0",
+      "category": "portfolio-demo"
+    }
+  },
+  {
+    "key": "rl-latency-buckets",
+    "shortCode": "LB04",
+    "name": "Latency Histogram",
+    "level": "easy",
+    "score": 1000,
+    "labels": [
+      "binary-search",
+      "histogram",
+      "observability"
+    ],
+    "mode": "stdio",
+    "runtimes": [
+      "Python",
+      "C++",
+      "Java",
+      "Rust",
+      "Go"
+    ],
+    "budget": {
+      "cpuMillis": 2000,
+      "memoryMiB": 128,
+      "derived": false
+    },
+    "acceptedCount": 0,
+    "customChecker": false,
+    "interactive": false,
+    "origin": {
+      "platform": "runline-labs",
+      "license": "CC0-1.0",
+      "category": "portfolio-demo"
+    }
+  },
+  {
+    "key": "rl-nearest-pairs",
+    "shortCode": "NP11",
+    "name": "Optimal Neighbour Pairing",
+    "level": "hard",
+    "score": 1800,
+    "labels": [
+      "greedy",
+      "sorting",
+      "custom-checker"
+    ],
+    "mode": "stdio",
+    "runtimes": [
+      "Python",
+      "C++",
+      "Java",
+      "Rust",
+      "Go"
+    ],
+    "budget": {
+      "cpuMillis": 2000,
+      "memoryMiB": 128,
+      "derived": false
+    },
+    "acceptedCount": 0,
+    "customChecker": true,
+    "interactive": false,
+    "origin": {
+      "platform": "runline-labs",
+      "license": "CC0-1.0",
+      "category": "portfolio-demo"
+    }
+  },
+  {
+    "key": "rl-quorum-window",
+    "shortCode": "QW10",
+    "name": "Smallest Quorum Window",
+    "level": "hard",
+    "score": 1700,
+    "labels": [
+      "two-pointers",
+      "events",
+      "sliding-window"
+    ],
+    "mode": "stdio",
+    "runtimes": [
+      "Python",
+      "C++",
+      "Java",
+      "Rust",
+      "Go"
+    ],
+    "budget": {
+      "cpuMillis": 2000,
+      "memoryMiB": 128,
+      "derived": false
+    },
+    "acceptedCount": 0,
+    "customChecker": false,
+    "interactive": false,
+    "origin": {
+      "platform": "runline-labs",
+      "license": "CC0-1.0",
+      "category": "portfolio-demo"
+    }
+  },
+  {
+    "key": "rl-retry-schedule",
+    "shortCode": "RS05",
+    "name": "Capped Retry Schedule",
+    "level": "easy",
+    "score": 1000,
+    "labels": [
+      "simulation",
+      "backoff",
+      "reliability"
+    ],
+    "mode": "stdio",
+    "runtimes": [
+      "Python",
+      "C++",
+      "Java",
+      "Rust",
+      "Go"
+    ],
+    "budget": {
+      "cpuMillis": 2000,
+      "memoryMiB": 128,
+      "derived": false
+    },
+    "acceptedCount": 0,
+    "customChecker": false,
+    "interactive": false,
+    "origin": {
+      "platform": "runline-labs",
+      "license": "CC0-1.0",
+      "category": "portfolio-demo"
+    }
+  },
+  {
+    "key": "rl-shard-capacity",
+    "shortCode": "SC08",
+    "name": "Contiguous Shard Capacity",
+    "level": "medium",
+    "score": 1500,
+    "labels": [
+      "binary-search",
+      "greedy",
+      "partitioning"
+    ],
+    "mode": "stdio",
+    "runtimes": [
+      "Python",
+      "C++",
+      "Java",
+      "Rust",
+      "Go"
+    ],
+    "budget": {
+      "cpuMillis": 2000,
+      "memoryMiB": 128,
+      "derived": false
+    },
+    "acceptedCount": 0,
+    "customChecker": false,
+    "interactive": false,
+    "origin": {
+      "platform": "runline-labs",
+      "license": "CC0-1.0",
+      "category": "portfolio-demo"
+    }
+  },
+  {
+    "key": "rl-signal-window",
+    "shortCode": "SW01",
+    "name": "Peak Signal Window",
+    "level": "easy",
+    "score": 900,
+    "labels": [
+      "sliding-window",
+      "arrays",
+      "monitoring"
+    ],
+    "mode": "stdio",
+    "runtimes": [
+      "Python",
+      "C++",
+      "Java",
+      "Rust",
+      "Go"
+    ],
+    "budget": {
+      "cpuMillis": 2000,
+      "memoryMiB": 128,
+      "derived": false
+    },
+    "acceptedCount": 0,
+    "customChecker": false,
+    "interactive": false,
+    "origin": {
+      "platform": "runline-labs",
+      "license": "CC0-1.0",
+      "category": "portfolio-demo"
+    }
+  }
+]

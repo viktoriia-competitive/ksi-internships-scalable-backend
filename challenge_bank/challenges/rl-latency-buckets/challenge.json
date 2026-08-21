@@ -1,0 +1,84 @@
+{
+  "key": "rl-latency-buckets",
+  "shortCode": "LB04",
+  "name": "Latency Histogram",
+  "origin": {
+    "platform": "runline-labs",
+    "license": "CC0-1.0",
+    "category": "portfolio-demo"
+  },
+  "level": "easy",
+  "score": 1000,
+  "labels": [
+    "binary-search",
+    "histogram",
+    "observability"
+  ],
+  "mode": "stdio",
+  "runtimes": [
+    "Python",
+    "C++",
+    "Java",
+    "Rust",
+    "Go"
+  ],
+  "budget": {
+    "cpuMillis": 2000,
+    "memoryMiB": 128,
+    "derived": false
+  },
+  "input": {
+    "mode": "stdio",
+    "inputFile": null,
+    "outputFile": null
+  },
+  "prompt": {
+    "overview": "Build a histogram of request latencies using sorted inclusive bucket limits. Values above the last limit belong to an overflow bucket.",
+    "inputContract": "The first line contains b and n. The second line has b strictly increasing bucket limits. The third line has n non-negative latencies.",
+    "outputContract": "Print b+1 counts: one count for each <= limit bucket followed by the overflow count.",
+    "interactionContract": null,
+    "notes": null
+  },
+  "examples": [
+    {
+      "stdin": "3 7\n50 100 250\n10 50 51 100 101 250 999",
+      "stdout": "2 2 2 1",
+      "explanation": null
+    }
+  ],
+  "evaluation": {
+    "checker": {
+      "kind": "token",
+      "script": null,
+      "options": {}
+    },
+    "interactor": null
+  },
+  "references": [
+    {
+      "runtime": "Python",
+      "entry": "model/sol.py"
+    }
+  ],
+  "suite": {
+    "directory": "tests",
+    "cases": 20,
+    "visible": 1,
+    "complete": true
+  },
+  "artifact": {
+    "kind": "source",
+    "extensions": [
+      ".py",
+      ".cpp",
+      ".cc",
+      ".c",
+      ".java",
+      ".rs",
+      ".go"
+    ],
+    "entrypoint": null
+  },
+  "acceptedCount": 0,
+  "enabled": true
+}

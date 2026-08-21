@@ -1,0 +1,84 @@
+{
+  "key": "rl-cache-expiry",
+  "shortCode": "CE07",
+  "name": "TTL Cache Timeline",
+  "origin": {
+    "platform": "runline-labs",
+    "license": "CC0-1.0",
+    "category": "portfolio-demo"
+  },
+  "level": "medium",
+  "score": 1300,
+  "labels": [
+    "simulation",
+    "hash-map",
+    "ttl"
+  ],
+  "mode": "stdio",
+  "runtimes": [
+    "Python",
+    "C++",
+    "Java",
+    "Rust",
+    "Go"
+  ],
+  "budget": {
+    "cpuMillis": 2000,
+    "memoryMiB": 128,
+    "derived": false
+  },
+  "input": {
+    "mode": "stdio",
+    "inputFile": null,
+    "outputFile": null
+  },
+  "prompt": {
+    "overview": "Replay a timestamped cache log. SET replaces the expiration time. A GET is a hit only when the key exists and its expiration time is strictly greater than the GET timestamp.",
+    "inputContract": "The first line contains q. Each following line is either 't SET key ttl' or 't GET key'. Timestamps are non-decreasing.",
+    "outputContract": "For each GET operation print HIT or MISS on its own line.",
+    "interactionContract": null,
+    "notes": null
+  },
+  "examples": [
+    {
+      "stdin": "7\n0 SET a 5\n2 GET a\n5 GET a\n6 SET a 2\n7 GET a\n8 GET a\n9 GET b",
+      "stdout": "HIT\nMISS\nHIT\nMISS\nMISS",
+      "explanation": null
+    }
+  ],
+  "evaluation": {
+    "checker": {
+      "kind": "token",
+      "script": null,
+      "options": {}
+    },
+    "interactor": null
+  },
+  "references": [
+    {
+      "runtime": "Python",
+      "entry": "model/sol.py"
+    }
+  ],
+  "suite": {
+    "directory": "tests",
+    "cases": 20,
+    "visible": 1,
+    "complete": true
+  },
+  "artifact": {
+    "kind": "source",
+    "extensions": [
+      ".py",
+      ".cpp",
+      ".cc",
+      ".c",
+      ".java",
+      ".rs",
+      ".go"
+    ],
+    "entrypoint": null
+  },
+  "acceptedCount": 0,
+  "enabled": true
+}

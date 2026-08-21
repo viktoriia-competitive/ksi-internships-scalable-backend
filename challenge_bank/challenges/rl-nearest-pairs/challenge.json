@@ -1,0 +1,84 @@
+{
+  "key": "rl-nearest-pairs",
+  "shortCode": "NP11",
+  "name": "Optimal Neighbour Pairing",
+  "origin": {
+    "platform": "runline-labs",
+    "license": "CC0-1.0",
+    "category": "portfolio-demo"
+  },
+  "level": "hard",
+  "score": 1800,
+  "labels": [
+    "greedy",
+    "sorting",
+    "custom-checker"
+  ],
+  "mode": "stdio",
+  "runtimes": [
+    "Python",
+    "C++",
+    "Java",
+    "Rust",
+    "Go"
+  ],
+  "budget": {
+    "cpuMillis": 2000,
+    "memoryMiB": 128,
+    "derived": false
+  },
+  "input": {
+    "mode": "stdio",
+    "inputFile": null,
+    "outputFile": null
+  },
+  "prompt": {
+    "overview": "Pair all 2n items so that the sum of absolute differences inside pairs is as small as possible. Any optimal pairing is accepted.",
+    "inputContract": "The first line contains n. The second line contains 2n distinct integer weights.",
+    "outputContract": "Print n lines. Each line contains two 1-based item indices. Every index must appear exactly once, and the pairing must have minimum total cost.",
+    "interactionContract": null,
+    "notes": null
+  },
+  "examples": [
+    {
+      "stdin": "3\n10 1 8 3 4 20",
+      "stdout": "2 4\n5 3\n1 6",
+      "explanation": null
+    }
+  ],
+  "evaluation": {
+    "checker": {
+      "kind": "custom",
+      "script": "checker/checker.py",
+      "options": {}
+    },
+    "interactor": null
+  },
+  "references": [
+    {
+      "runtime": "Python",
+      "entry": "model/sol.py"
+    }
+  ],
+  "suite": {
+    "directory": "tests",
+    "cases": 20,
+    "visible": 1,
+    "complete": true
+  },
+  "artifact": {
+    "kind": "source",
+    "extensions": [
+      ".py",
+      ".cpp",
+      ".cc",
+      ".c",
+      ".java",
+      ".rs",
+      ".go"
+    ],
+    "entrypoint": null
+  },
+  "acceptedCount": 0,
+  "enabled": true
+}

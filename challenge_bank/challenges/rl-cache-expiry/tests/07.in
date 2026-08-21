@@ -1,0 +1,21 @@
+20
+3 GET token
+3 SET user 8
+4 GET user
+5 GET a
+6 GET b
+9 SET b 5
+11 SET user 3
+14 GET a
+16 SET b 5
+19 SET b 10
+22 GET b
+23 GET user
+24 SET c 12
+26 SET b 11
+27 GET user
+30 GET user
+31 GET b
+34 GET token
+35 SET b 1
+35 SET token 11

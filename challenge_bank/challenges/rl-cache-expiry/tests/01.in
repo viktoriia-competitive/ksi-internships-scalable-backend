@@ -1,0 +1,8 @@
+7
+0 SET a 5
+2 GET a
+5 GET a
+6 SET a 2
+7 GET a
+8 GET a
+9 GET b
