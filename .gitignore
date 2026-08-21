@@ -1,0 +1,78 @@
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+.venv/
+.venv-*/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.log
+
+# ---------------------------------------------------------------------------
+# Node / Next.js (frontend)
+# ---------------------------------------------------------------------------
+node_modules/
+web_console/node_modules/
+web_console/.next/
+web_console/out/
+web_console/.turbo/
+web_console/.vercel/
+web_console/tsconfig.tsbuildinfo
+**/*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Env / secrets (keep *.example)
+.env
+.env.*
+!.env.example
+!**/.env*.example
+web_console/.env.local
+web_console/.env.development.local
+web_console/.env.production.local
+
+# Generated challenge catalogue for the console (optional offline)
+web_console/lib/generated/
+
+# ---------------------------------------------------------------------------
+# Runtime / local state (do not commit)
+# ---------------------------------------------------------------------------
+/storage/
+challenge_bank/.runline/
+execution_engine/queue/
+execution_engine/workspace/*
+!execution_engine/workspace/README.md
+*.sqlite
+*.db
+
+# ---------------------------------------------------------------------------
+# OS / IDE
+# ---------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# ---------------------------------------------------------------------------
+# Docker / misc
+# ---------------------------------------------------------------------------
+*.pid
+.docker/

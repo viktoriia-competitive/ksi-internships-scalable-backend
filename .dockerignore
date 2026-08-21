@@ -1,0 +1,14 @@
+.git
+.gitignore
+**/__pycache__
+**/*.py[cod]
+.pytest_cache
+.venv
+.venv-*
+web_console/node_modules
+web_console/.next
+challenge_bank/.runline
+*.tar
+*.tar.gz
+*.zip
+.DS_Store
