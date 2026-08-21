@@ -1,0 +1,61 @@
+{
+  "key": "fix-limits",
+  "shortCode": "LIM",
+  "name": "Limit stress fixtures (judge)",
+  "origin": {
+    "platform": "runline",
+    "license": "internal"
+  },
+  "level": "easy",
+  "score": null,
+  "labels": [
+    "fixture",
+    "limits"
+  ],
+  "mode": "stdio",
+  "runtimes": [
+    "Python"
+  ],
+  "budget": {
+    "cpuMillis": 100,
+    "memoryMiB": 32,
+    "derived": false
+  },
+  "input": {
+    "mode": "stdio",
+    "inputFile": null,
+    "outputFile": null
+  },
+  "prompt": {
+    "overview": "Synthetic guard fixture whose artifacts intentionally exceed CPU, memory, or wall budgets.",
+    "inputContract": "",
+    "outputContract": "",
+    "interactionContract": null,
+    "notes": null
+  },
+  "examples": [],
+  "evaluation": {
+    "checker": {
+      "kind": "token",
+      "script": null,
+      "options": {}
+    },
+    "interactor": null
+  },
+  "references": [],
+  "suite": {
+    "directory": "tests",
+    "cases": 1,
+    "visible": 1,
+    "complete": true
+  },
+  "artifact": {
+    "kind": "source",
+    "extensions": [
+      ".py"
+    ],
+    "entrypoint": null
+  },
+  "acceptedCount": 0,
+  "enabled": true
+}

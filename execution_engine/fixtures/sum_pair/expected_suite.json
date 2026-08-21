@@ -1,0 +1,7 @@
+{
+  "purpose": "Example of a fully accepted two-case suite.",
+  "status": "ACCEPTED",
+  "tests_total": 2,
+  "tests_passed": 2,
+  "limits_are_per_test": true
+}

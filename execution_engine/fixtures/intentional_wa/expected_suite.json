@@ -1,0 +1,6 @@
+{
+  "purpose": "The bundled source is intentionally incorrect and should fail comparison.",
+  "status": "WRONG_ANSWER",
+  "tests_total": 2,
+  "expected_first_failure": "01"
+}

@@ -1,0 +1,7 @@
+{
+  "purpose": "Document the expected accepted suite shape for three independent cases.",
+  "status": "ACCEPTED",
+  "tests_total": 3,
+  "tests_passed": 3,
+  "per_test_time_limit_ms": 60
+}

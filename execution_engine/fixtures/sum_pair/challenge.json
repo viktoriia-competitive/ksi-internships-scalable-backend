@@ -1,0 +1,78 @@
+{
+  "key": "fixture-sum-pair",
+  "shortCode": "SUM2",
+  "name": "Two-number acceptance fixture",
+  "origin": {
+    "platform": "runline",
+    "license": "internal"
+  },
+  "level": "easy",
+  "score": null,
+  "labels": [
+    "fixture",
+    "acceptance-path"
+  ],
+  "mode": "stdio",
+  "runtimes": [
+    "Python",
+    "C++"
+  ],
+  "budget": {
+    "cpuMillis": 750,
+    "memoryMiB": 48,
+    "derived": false
+  },
+  "input": {
+    "mode": "stdio",
+    "inputFile": null,
+    "outputFile": null
+  },
+  "prompt": {
+    "overview": "Tiny fixture used to verify a successful compile/run/compare cycle.",
+    "inputContract": "Two signed integers.",
+    "outputContract": "Their sum.",
+    "interactionContract": null,
+    "notes": null
+  },
+  "examples": [
+    {
+      "stdin": "7 -2\n",
+      "stdout": "5\n",
+      "explanation": null
+    }
+  ],
+  "evaluation": {
+    "checker": {
+      "kind": "token",
+      "script": null,
+      "options": {}
+    },
+    "interactor": null
+  },
+  "references": [
+    {
+      "runtime": "Python",
+      "entry": "main.py"
+    },
+    {
+      "runtime": "C++",
+      "entry": "main.cpp"
+    }
+  ],
+  "suite": {
+    "directory": "tests",
+    "cases": 2,
+    "visible": 1,
+    "complete": true
+  },
+  "artifact": {
+    "kind": "source",
+    "extensions": [
+      ".py",
+      ".cpp"
+    ],
+    "entrypoint": null
+  },
+  "acceptedCount": 0,
+  "enabled": true
+}

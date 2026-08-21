@@ -1,0 +1,67 @@
+{
+  "key": "fixture-intentional-wa",
+  "shortCode": "WA2",
+  "name": "Wrong-answer reporting fixture",
+  "origin": {
+    "platform": "runline",
+    "license": "internal"
+  },
+  "level": "easy",
+  "score": null,
+  "labels": [
+    "fixture",
+    "wrong-answer"
+  ],
+  "mode": "stdio",
+  "runtimes": [
+    "Python"
+  ],
+  "budget": {
+    "cpuMillis": 750,
+    "memoryMiB": 48,
+    "derived": false
+  },
+  "input": {
+    "mode": "stdio",
+    "inputFile": null,
+    "outputFile": null
+  },
+  "prompt": {
+    "overview": "The program should print the product of two integers.",
+    "inputContract": "",
+    "outputContract": "",
+    "interactionContract": null,
+    "notes": null
+  },
+  "examples": [
+    {
+      "stdin": "3 4\n",
+      "stdout": "12\n",
+      "explanation": null
+    }
+  ],
+  "evaluation": {
+    "checker": {
+      "kind": "token",
+      "script": null,
+      "options": {}
+    },
+    "interactor": null
+  },
+  "references": [],
+  "suite": {
+    "directory": "tests",
+    "cases": 2,
+    "visible": 1,
+    "complete": true
+  },
+  "artifact": {
+    "kind": "source",
+    "extensions": [
+      ".py"
+    ],
+    "entrypoint": null
+  },
+  "acceptedCount": 0,
+  "enabled": true
+}

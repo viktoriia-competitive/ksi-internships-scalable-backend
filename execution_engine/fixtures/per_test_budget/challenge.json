@@ -1,0 +1,73 @@
+{
+  "key": "fixture-per-test-budget",
+  "shortCode": "BUDGET3",
+  "name": "Independent per-case budget fixture",
+  "origin": {
+    "platform": "runline",
+    "license": "internal"
+  },
+  "level": "easy",
+  "score": null,
+  "labels": [
+    "fixture",
+    "limits",
+    "per-test"
+  ],
+  "mode": "stdio",
+  "runtimes": [
+    "Python"
+  ],
+  "budget": {
+    "cpuMillis": 60,
+    "memoryMiB": 48,
+    "derived": false
+  },
+  "input": {
+    "mode": "stdio",
+    "inputFile": null,
+    "outputFile": null
+  },
+  "prompt": {
+    "overview": "Each case asks for n cubed; every case receives its own CPU budget.",
+    "inputContract": "One integer n.",
+    "outputContract": "n cubed.",
+    "interactionContract": null,
+    "notes": null
+  },
+  "examples": [
+    {
+      "stdin": "4\n",
+      "stdout": "64\n",
+      "explanation": null
+    }
+  ],
+  "evaluation": {
+    "checker": {
+      "kind": "token",
+      "script": null,
+      "options": {}
+    },
+    "interactor": null
+  },
+  "references": [
+    {
+      "runtime": "Python",
+      "entry": "main.py"
+    }
+  ],
+  "suite": {
+    "directory": "tests",
+    "cases": 3,
+    "visible": 1,
+    "complete": true
+  },
+  "artifact": {
+    "kind": "source",
+    "extensions": [
+      ".py"
+    ],
+    "entrypoint": null
+  },
+  "acceptedCount": 0,
+  "enabled": true
+}

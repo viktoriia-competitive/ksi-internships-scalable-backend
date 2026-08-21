@@ -1,0 +1,33 @@
+{
+  "description": "Independent source artifacts exercise the same 100 ms CPU, 32 MiB memory, and 200 ms wall budgets.",
+  "limits": {
+    "time_limit_ms": 100,
+    "memory_limit_mb": 32,
+    "wall_factor": 2.0,
+    "wall_deadline_ms": 200,
+    "scope": "per_test"
+  },
+  "scenarios": [
+    {
+      "id": "sleep_wall",
+      "source": "sleep.py",
+      "language": "Python",
+      "expected_status": "TIME_LIMIT",
+      "notes": "sleeps 30s; CPU≈0; wall watchdog fires at ~200ms"
+    },
+    {
+      "id": "burn_cpu",
+      "source": "burn_cpu.py",
+      "language": "Python",
+      "expected_status": "TIME_LIMIT",
+      "notes": "busy loop; cpu_ms exceeds 100ms (may also hit wall)"
+    },
+    {
+      "id": "mem_bomb",
+      "source": "mem.py",
+      "language": "Python",
+      "expected_status": "MEMORY_LIMIT",
+      "notes": "allocates ~256MB; cgroup at 32MB should OOM"
+    }
+  ]
+}
